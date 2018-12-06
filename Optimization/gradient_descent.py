@@ -39,17 +39,17 @@ def plot(x_start, learning_rate, f, f_deriv, n_iter, save_name=None, x=np.arange
 	#for i in range(len(x_path)-1):
 	#	plt.arrow(x_path[i], f_vals[i], x_path[i+1]-x_path[i], f_vals[i+1]-f_vals[i], color='red', shape='full', head_width=0.5)
 
-	plt.legend()
+	plt.legend(framealpha=0)
 
 	if save_name is not None:
-		plt.savefig(save_name)
+		plt.savefig(save_name, transparent=True)
 
 def convex_plots():
-	plot(-5, 1.1, quadratic, quadratic_deriv, 2, 'convex_lrlarge.png') #lr too large
-	plot(-5, 0.1, quadratic, quadratic_deriv, 10, 'convex_lrsmall.png') #convergence
-	plot(-5, 0.8, quadratic, quadratic_deriv, 10, 'convex_bounce.png')
+	plot(-5, 1.1, quadratic, quadratic_deriv, 2, save_name='plots/convex_lrlarge.png') #lr too large
+	plot(-5, 0.1, quadratic, quadratic_deriv, 10, save_name='plots/convex_lrsmall.png') #convergence
+	plot(-5, 0.8, quadratic, quadratic_deriv, 10, save_name='plots/convex_bounce.png')
 
-	plot(0.5, 0.01, valley, valley_deriv, 100, save_name='nonconvex_right_lrsmall.png', x=np.arange(-5,5,0.1)) #right, small lr
-	plot(0.5, 0.05, valley, valley_deriv, 10, save_name='nonconvex_right_lrlarge.png', x=np.arange(-5,5,0.1))
-	plot(-0.5, 0.01, valley, valley_deriv, 100, save_name='nonconvex_left_lrsmall.png', x=np.arange(-5,5,0.1)) #right, small lr
-	plot(-0.5, 0.05, valley, valley_deriv, 10, save_name='nonconvex_left_lrlarge.png', x=np.arange(-5,5,0.1))
+	plot(0.5, 0.01, valley, valley_deriv, 100, save_name='plots/nonconvex_right_lrsmall.png', x=np.arange(-5,5,0.1)) #right, small lr
+	plot(0.5, 0.05, valley, valley_deriv, 10, save_name='plots/nonconvex_right_lrlarge.png', x=np.arange(-5,5,0.1))
+	plot(-0.5, 0.01, valley, valley_deriv, 100, save_name='plots/nonconvex_left_lrsmall.png', x=np.arange(-5,5,0.1)) #right, small lr
+	plot(-0.5, 0.05, valley, valley_deriv, 10, save_name='plots/nonconvex_left_lrlarge.png', x=np.arange(-5,5,0.1))
