@@ -25,7 +25,7 @@ def read_data(pct_to_keep=None, seed=None):
         if seed is None:
             np.random.seed(0)
 
-        if pct_to_keep <= 0 or pct_to_keep >= 1:
+        if pct_to_keep > 0 and pct_to_keep < 1:
             train = pd.read_csv('data/cv_train.csv', skiprows=lambda x: x>0 and np.random.random()>pct_to_keep)
             test = pd.read_csv('data/cv_test.csv', skiprows=lambda x: x>0 and np.random.random()>pct_to_keep)
 
