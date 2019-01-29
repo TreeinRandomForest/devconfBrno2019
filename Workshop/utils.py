@@ -4,7 +4,6 @@ import sys, gc
 import matplotlib.pylab as plt
 import operator
 import multiprocessing as mp
-import config
 import matplotlib.pylab as plt
 plt.ion()
 
